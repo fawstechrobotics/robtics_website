@@ -1,0 +1,37 @@
+services:
+  web:
+    build: .
+    # REMOVE this line: ports:
+    #   - "8000:8000"
+    volumes:
+      - .:/app
+      - static:/app/static
+      - media:/app/media
+    environment:
+      - DEBUG=0
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+      - media:/app/media
+      - static:/app/static
+    depends_on:
+      - web
+
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+    entrypoint: >
+      sh -c "certbot certonly --webroot -w /var/www/certbot --email igniteprojects777@gmail.com --agree-tos --no-eff-email --non-interactive --quiet -d api.fawstechrobotics.in || true"
+
+volumes:
+  static:
+  media:

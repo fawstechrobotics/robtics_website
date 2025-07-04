@@ -1,0 +1,36 @@
+version: '3.8'
+
+
+
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - static:/app/static  # Required for NGINX static file serving
+    environment:
+      - DEBUG=1  # Disable debug mode for production
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+    depends_on:
+      - web
+
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+    command: certonly --webroot -w /var/www/certbot --email your-email@example.com --agree-tos --no-eff-email -d api.fawstechrobotics.in
+
+volumes:
+  static:
