@@ -1,28 +1,30 @@
-# Python
+cat >> .gitignore <<'EOF'
+
+# Certificates & certbot
+data/certbot/
+data/certbot/conf/
+data/certbot/conf/accounts/
+data/certbot/conf/archive/
+
+# Media (large media files should NOT be in git)
+media/
+media/chapter_videos/
+media/landing_media/
+
+# env / keys
+.env
+*.pem
+*.key
+privkey*
+fullchain*
+
+# Python / common
 __pycache__/
 *.pyc
-*.pyo
-
-# Virtual env
-env/
 venv/
-*.env
-
-# Django
-db.sqlite3
-*.log
-
-# VSCode
-.vscode/
-
-# Firebase key
-*.json
-
-# OS files
+env/
 .DS_Store
-Thumbs.db
+node_modules/
+EOF
 
-
-
-# IDEs
-.idea/
+fawstech-robotics-firebase-adminsdk-*.json

@@ -178,3 +178,8 @@ LOGGING = {
         },
     },
 }
+
+
+# Allow large file uploads (1 GB)
+DATA_UPLOAD_MAX_MEMORY_SIZE = 1073741824  # 1 GB
+FILE_UPLOAD_MAX_MEMORY_SIZE = 1073741824  # 1 GB
