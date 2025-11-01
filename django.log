@@ -24580,3 +24580,1664 @@ Not Found: /Core/Skin/Login.aspx
 Not Found: /aaa9
 Not Found: /aab9
 Not Found: /
+Not Found: /Core/Skin/Login.aspx
+Not Found: /
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /Core/Skin/Login.aspx
+Not Found: /
+Not Found: /security.txt
+Not Found: /
+Not Found: /.git/credentials
+Internal Server Error: /student/course/4/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/djongo/sql2mongo/query.py", line 805, in __iter__
+    yield from iter(self._query)
+  File "/usr/local/lib/python3.9/site-packages/djongo/sql2mongo/query.py", line 166, in __iter__
+    for doc in cursor:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/cursor.py", line 1207, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/local/lib/python3.9/site-packages/pymongo/cursor.py", line 1100, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1816, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1766, in __start_session
+    server_session = self._get_server_session()
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1802, in _get_server_session
+    return self._topology.get_server_session()
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 496, in get_server_session
+    self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 215, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: 13.203.239.34:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 68d3e131bee8f7ac9b5dbf80, topology_type: Single, servers: [<ServerDescription ('13.203.239.34', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('13.203.239.34:27017: [Errno 111] Connection refused')>]>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/djongo/cursor.py", line 65, in fetchmany
+    ret.append(self.result.next())
+  File "/usr/local/lib/python3.9/site-packages/djongo/sql2mongo/query.py", line 794, in __next__
+    result = next(self._result_generator)
+  File "/usr/local/lib/python3.9/site-packages/djongo/sql2mongo/query.py", line 827, in __iter__
+    raise exe from e
+djongo.exceptions.SQLDecodeError: 
+
+	Keyword: FAILED SQL: SELECT "admin_panel_user"."id", "admin_panel_user"."password", "admin_panel_user"."last_login", "admin_panel_user"."is_superuser", "admin_panel_user"."email", "admin_panel_user"."role", "admin_panel_user"."is_active" FROM "admin_panel_user" WHERE "admin_panel_user"."id" = %(0)s LIMIT 21
+Params: (23,)
+Version: 1.3.7
+	Sub SQL: None
+	FAILED SQL: None
+	Params: None
+	Version: None
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 97, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/djongo/cursor.py", line 70, in fetchmany
+    raise db_exe from e
+djongo.database.DatabaseError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 414, in initial
+    self.perform_authentication(request)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 324, in perform_authentication
+    request.user
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/request.py", line 227, in user
+    self._authenticate()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/request.py", line 380, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework_simplejwt/authentication.py", line 42, in authenticate
+    return self.get_user(validated_token), validated_token
+  File "/app/admin_panel/authentication.py", line 9, in get_user
+    user = User.objects.get(id=user_id)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 425, in get
+    num = len(clone)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 269, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 1308, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1189, in execute_sql
+    return list(result)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1606, in cursor_iter
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1606, in <lambda>
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 97, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 97, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/djongo/cursor.py", line 70, in fetchmany
+    raise db_exe from e
+django.db.utils.DatabaseError
+Internal Server Error: /student/login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/djongo/sql2mongo/query.py", line 805, in __iter__
+    yield from iter(self._query)
+  File "/usr/local/lib/python3.9/site-packages/djongo/sql2mongo/query.py", line 166, in __iter__
+    for doc in cursor:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/cursor.py", line 1207, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/local/lib/python3.9/site-packages/pymongo/cursor.py", line 1100, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1816, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1766, in __start_session
+    server_session = self._get_server_session()
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1802, in _get_server_session
+    return self._topology.get_server_session()
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 496, in get_server_session
+    self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 215, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: 13.203.239.34:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 68d3e131e8792385d9f52d63, topology_type: Single, servers: [<ServerDescription ('13.203.239.34', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('13.203.239.34:27017: [Errno 111] Connection refused')>]>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/djongo/cursor.py", line 65, in fetchmany
+    ret.append(self.result.next())
+  File "/usr/local/lib/python3.9/site-packages/djongo/sql2mongo/query.py", line 794, in __next__
+    result = next(self._result_generator)
+  File "/usr/local/lib/python3.9/site-packages/djongo/sql2mongo/query.py", line 827, in __iter__
+    raise exe from e
+djongo.exceptions.SQLDecodeError: 
+
+	Keyword: FAILED SQL: SELECT "admin_panel_user"."id", "admin_panel_user"."password", "admin_panel_user"."last_login", "admin_panel_user"."is_superuser", "admin_panel_user"."email", "admin_panel_user"."role", "admin_panel_user"."is_active" FROM "admin_panel_user" WHERE "admin_panel_user"."email" = %(0)s LIMIT 21
+Params: ('abhishekkalarikkal666@gmail.com',)
+Version: 1.3.7
+	Sub SQL: None
+	FAILED SQL: None
+	Params: None
+	Version: None
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 97, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/djongo/cursor.py", line 70, in fetchmany
+    raise db_exe from e
+djongo.database.DatabaseError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/app/student/views.py", line 112, in post
+    if serializer.is_valid():
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 220, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 422, in run_validation
+    value = self.validate(value)
+  File "/app/student/serializers.py", line 141, in validate
+    user = authenticate(email=data['email'], password=data['password'])
+  File "/usr/local/lib/python3.9/site-packages/django/contrib/auth/__init__.py", line 73, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "/app/admin_panel/auth_backend.py", line 8, in authenticate
+    user = User.objects.get(email=email)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 425, in get
+    num = len(clone)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 269, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 1308, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1189, in execute_sql
+    return list(result)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1606, in cursor_iter
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1606, in <lambda>
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 97, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 97, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/djongo/cursor.py", line 70, in fetchmany
+    raise db_exe from e
+django.db.utils.DatabaseError
+Internal Server Error: /admin_panel/gallery/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/djongo/sql2mongo/query.py", line 805, in __iter__
+    yield from iter(self._query)
+  File "/usr/local/lib/python3.9/site-packages/djongo/sql2mongo/query.py", line 166, in __iter__
+    for doc in cursor:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/cursor.py", line 1207, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/local/lib/python3.9/site-packages/pymongo/cursor.py", line 1100, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1816, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1766, in __start_session
+    server_session = self._get_server_session()
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1802, in _get_server_session
+    return self._topology.get_server_session()
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 496, in get_server_session
+    self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 215, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: 13.203.239.34:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 68d3e131bee8f7ac9b5dbf80, topology_type: Single, servers: [<ServerDescription ('13.203.239.34', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('13.203.239.34:27017: [Errno 111] Connection refused')>]>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/djongo/cursor.py", line 65, in fetchmany
+    ret.append(self.result.next())
+  File "/usr/local/lib/python3.9/site-packages/djongo/sql2mongo/query.py", line 794, in __next__
+    result = next(self._result_generator)
+  File "/usr/local/lib/python3.9/site-packages/djongo/sql2mongo/query.py", line 827, in __iter__
+    raise exe from e
+djongo.exceptions.SQLDecodeError: 
+
+	Keyword: FAILED SQL: SELECT "admin_panel_galleryimage"."id", "admin_panel_galleryimage"."file", "admin_panel_galleryimage"."uploaded_at" FROM "admin_panel_galleryimage" ORDER BY "admin_panel_galleryimage"."uploaded_at" DESC
+Params: ()
+Version: 1.3.7
+	Sub SQL: None
+	FAILED SQL: None
+	Params: None
+	Version: None
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 97, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/djongo/cursor.py", line 70, in fetchmany
+    raise db_exe from e
+djongo.database.DatabaseError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/app/admin_panel/views.py", line 183, in get
+    return Response(serializer.data)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 745, in data
+    ret = super().data
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 663, in to_representation
+    return [
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 287, in __iter__
+    self._fetch_all()
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 1308, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1189, in execute_sql
+    return list(result)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1606, in cursor_iter
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1606, in <lambda>
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 97, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 97, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/djongo/cursor.py", line 70, in fetchmany
+    raise db_exe from e
+django.db.utils.DatabaseError
+Internal Server Error: /admin_panel/media/list/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/djongo/sql2mongo/query.py", line 805, in __iter__
+    yield from iter(self._query)
+  File "/usr/local/lib/python3.9/site-packages/djongo/sql2mongo/query.py", line 166, in __iter__
+    for doc in cursor:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/cursor.py", line 1207, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/local/lib/python3.9/site-packages/pymongo/cursor.py", line 1100, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1816, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1766, in __start_session
+    server_session = self._get_server_session()
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1802, in _get_server_session
+    return self._topology.get_server_session()
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 496, in get_server_session
+    self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 215, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: 13.203.239.34:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 68d3e1314aca3bb033e73a29, topology_type: Single, servers: [<ServerDescription ('13.203.239.34', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('13.203.239.34:27017: [Errno 111] Connection refused')>]>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/djongo/cursor.py", line 65, in fetchmany
+    ret.append(self.result.next())
+  File "/usr/local/lib/python3.9/site-packages/djongo/sql2mongo/query.py", line 794, in __next__
+    result = next(self._result_generator)
+  File "/usr/local/lib/python3.9/site-packages/djongo/sql2mongo/query.py", line 827, in __iter__
+    raise exe from e
+djongo.exceptions.SQLDecodeError: 
+
+	Keyword: FAILED SQL: SELECT "admin_panel_landingmedia"."id", "admin_panel_landingmedia"."media_type", "admin_panel_landingmedia"."file", "admin_panel_landingmedia"."uploaded_at" FROM "admin_panel_landingmedia" ORDER BY "admin_panel_landingmedia"."uploaded_at" DESC
+Params: ()
+Version: 1.3.7
+	Sub SQL: None
+	FAILED SQL: None
+	Params: None
+	Version: None
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 97, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/djongo/cursor.py", line 70, in fetchmany
+    raise db_exe from e
+djongo.database.DatabaseError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 199, in get
+    return self.list(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 745, in data
+    ret = super().data
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 663, in to_representation
+    return [
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 287, in __iter__
+    self._fetch_all()
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 1308, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1189, in execute_sql
+    return list(result)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1606, in cursor_iter
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1606, in <lambda>
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 97, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 97, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/djongo/cursor.py", line 70, in fetchmany
+    raise db_exe from e
+django.db.utils.DatabaseError
+Internal Server Error: /admin_panel/events/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/djongo/sql2mongo/query.py", line 805, in __iter__
+    yield from iter(self._query)
+  File "/usr/local/lib/python3.9/site-packages/djongo/sql2mongo/query.py", line 166, in __iter__
+    for doc in cursor:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/cursor.py", line 1207, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/local/lib/python3.9/site-packages/pymongo/cursor.py", line 1100, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1816, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1766, in __start_session
+    server_session = self._get_server_session()
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1802, in _get_server_session
+    return self._topology.get_server_session()
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 496, in get_server_session
+    self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 215, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: 13.203.239.34:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 68d3e131e8792385d9f52d63, topology_type: Single, servers: [<ServerDescription ('13.203.239.34', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('13.203.239.34:27017: [Errno 111] Connection refused')>]>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/djongo/cursor.py", line 65, in fetchmany
+    ret.append(self.result.next())
+  File "/usr/local/lib/python3.9/site-packages/djongo/sql2mongo/query.py", line 794, in __next__
+    result = next(self._result_generator)
+  File "/usr/local/lib/python3.9/site-packages/djongo/sql2mongo/query.py", line 827, in __iter__
+    raise exe from e
+djongo.exceptions.SQLDecodeError: 
+
+	Keyword: FAILED SQL: SELECT "admin_panel_event"."id", "admin_panel_event"."title", "admin_panel_event"."description", "admin_panel_event"."image", "admin_panel_event"."event_date" FROM "admin_panel_event" ORDER BY "admin_panel_event"."event_date" ASC
+Params: ()
+Version: 1.3.7
+	Sub SQL: None
+	FAILED SQL: None
+	Params: None
+	Version: None
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 97, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/djongo/cursor.py", line 70, in fetchmany
+    raise db_exe from e
+djongo.database.DatabaseError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 199, in get
+    return self.list(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 745, in data
+    ret = super().data
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 663, in to_representation
+    return [
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 287, in __iter__
+    self._fetch_all()
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 1308, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1189, in execute_sql
+    return list(result)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1606, in cursor_iter
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1606, in <lambda>
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 97, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 97, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/djongo/cursor.py", line 70, in fetchmany
+    raise db_exe from e
+django.db.utils.DatabaseError
+Internal Server Error: /admin_panel/courses/recommended/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/djongo/sql2mongo/query.py", line 805, in __iter__
+    yield from iter(self._query)
+  File "/usr/local/lib/python3.9/site-packages/djongo/sql2mongo/query.py", line 166, in __iter__
+    for doc in cursor:
+  File "/usr/local/lib/python3.9/site-packages/pymongo/cursor.py", line 1207, in next
+    if len(self.__data) or self._refresh():
+  File "/usr/local/lib/python3.9/site-packages/pymongo/cursor.py", line 1100, in _refresh
+    self.__session = self.__collection.database.client._ensure_session()
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1816, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1766, in __start_session
+    server_session = self._get_server_session()
+  File "/usr/local/lib/python3.9/site-packages/pymongo/mongo_client.py", line 1802, in _get_server_session
+    return self._topology.get_server_session()
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 496, in get_server_session
+    self._select_servers_loop(
+  File "/usr/local/lib/python3.9/site-packages/pymongo/topology.py", line 215, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+pymongo.errors.ServerSelectionTimeoutError: 13.203.239.34:27017: [Errno 111] Connection refused, Timeout: 30s, Topology Description: <TopologyDescription id: 68d3e131bee8f7ac9b5dbf80, topology_type: Single, servers: [<ServerDescription ('13.203.239.34', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('13.203.239.34:27017: [Errno 111] Connection refused')>]>
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/djongo/cursor.py", line 65, in fetchmany
+    ret.append(self.result.next())
+  File "/usr/local/lib/python3.9/site-packages/djongo/sql2mongo/query.py", line 794, in __next__
+    result = next(self._result_generator)
+  File "/usr/local/lib/python3.9/site-packages/djongo/sql2mongo/query.py", line 827, in __iter__
+    raise exe from e
+djongo.exceptions.SQLDecodeError: 
+
+	Keyword: FAILED SQL: SELECT "admin_panel_course"."id", "admin_panel_course"."thumbnail", "admin_panel_course"."name", "admin_panel_course"."description", "admin_panel_course"."category", "admin_panel_course"."author_id", "admin_panel_course"."what_you_will_learn_1", "admin_panel_course"."what_you_will_learn_2", "admin_panel_course"."what_you_will_learn_3", "admin_panel_course"."what_you_will_learn_4", "admin_panel_course"."what_you_will_learn_5", "admin_panel_course"."what_you_will_learn_6", "admin_panel_course"."price_inr", "admin_panel_course"."offer_price", "admin_panel_course"."recommended", "admin_panel_course"."position", "admin_panel_course"."total_chapters", "admin_panel_course"."total_quizzes", "admin_panel_course"."why_choose_this_course", "admin_panel_course"."what_will_you_learn", "admin_panel_course"."is_course_updated", "admin_panel_course"."who_is_this_course_for", "admin_panel_course"."course_requirements" FROM "admin_panel_course" WHERE "admin_panel_course"."recommended" IN (%(0)s) ORDER BY "admin_panel_course"."position" ASC
+Params: (True,)
+Version: 1.3.7
+	Sub SQL: None
+	FAILED SQL: None
+	Params: None
+	Version: None
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 97, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/djongo/cursor.py", line 70, in fetchmany
+    raise db_exe from e
+djongo.database.DatabaseError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 199, in get
+    return self.list(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 745, in data
+    ret = super().data
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 663, in to_representation
+    return [
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 287, in __iter__
+    self._fetch_all()
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 1308, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1189, in execute_sql
+    return list(result)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1606, in cursor_iter
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1606, in <lambda>
+    for rows in iter((lambda: cursor.fetchmany(itersize)), sentinel):
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 97, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.9/site-packages/django/db/utils.py", line 97, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/djongo/cursor.py", line 70, in fetchmany
+    raise db_exe from e
+django.db.utils.DatabaseError
+Bad Request: /admin_panel/login/
+Not Found: /
+Not Found: /.git/config
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /Core/Skin/Login.aspx
+Not Found: /
+Not Found: /.git/index
+Not Found: /
+Not Found: /
+Not Found: /security.txt
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /robots.txt
+Not Found: /favicon.ico
+Not Found: /Core/Skin/Login.aspx
+Not Found: /
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: /
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: /business/appVersion/get/qr/download
+Not Found: /Core/Skin/Login.aspx
+Not Found: /
+Not Found: /developmentserver/metadatauploader
+Not Found: /live_types.json
+Not Found: /Core/Skin/Login.aspx
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /6592533472
+Not Found: /owa/auth/x.js
+Not Found: /api/Game/GetFullGameScheduleByDate
+Not Found: /
+Not Found: /
+Not Found: //.env
+Not Found: //.env.local
+Not Found: //.env.dev
+Not Found: //.env.prod
+Not Found: //.env.staging
+Not Found: //.env.development
+Not Found: //.env.production
+Not Found: //.env.test
+Not Found: //.env.backup
+Not Found: //.env.example
+Not Found: //.env.sample
+Not Found: //.env.old
+Not Found: //.env.bak
+Not Found: //.env.save
+Not Found: //.env.orig
+Not Found: //.env.swp
+Not Found: //.env~
+Not Found: //.env.tmp
+Not Found: //.env.dist
+Not Found: //admin/.env
+Not Found: //admin/.env.save
+Not Found: //admin/.env.bak
+Not Found: //admin/.env.old
+Not Found: //api/.env
+Not Found: //api/.env.save
+Not Found: //api/.env.bak
+Not Found: //api/.env.old
+Not Found: //app/.env
+Not Found: //app/.env.save
+Not Found: //app/.env.bak
+Not Found: //app/.env.old
+Not Found: //config/.env
+Not Found: //config/.env.save
+Not Found: //config/.env.bak
+Not Found: //config/.env.old
+Not Found: //src/.env
+Not Found: //src/.env.save
+Not Found: //src/.env.bak
+Not Found: //src/.env.old
+Not Found: //public/.env
+Not Found: //public/.env.save
+Not Found: //public/.env.bak
+Not Found: //public/.env.old
+Not Found: //assets/.env
+Not Found: //assets/.env.save
+Not Found: //assets/.env.bak
+Not Found: //assets/.env.old
+Not Found: //includes/.env
+Not Found: //includes/.env.save
+Not Found: //includes/.env.bak
+Not Found: //includes/.env.old
+Not Found: //lib/.env
+Not Found: //lib/.env.save
+Not Found: //lib/.env.bak
+Not Found: //lib/.env.old
+Not Found: //application/.env
+Not Found: //application/.env.save
+Not Found: //application/.env.bak
+Not Found: //application/.env.old
+Not Found: //system/.env
+Not Found: //system/.env.save
+Not Found: //system/.env.bak
+Not Found: //system/.env.old
+Not Found: //core/.env
+Not Found: //core/.env.save
+Not Found: //core/.env.bak
+Not Found: //core/.env.old
+Not Found: //modules/.env
+Not Found: //modules/.env.save
+Not Found: //modules/.env.bak
+Not Found: //modules/.env.old
+Not Found: //plugins/.env
+Not Found: //plugins/.env.save
+Not Found: //plugins/.env.bak
+Not Found: //plugins/.env.old
+Not Found: //themes/.env
+Not Found: //themes/.env.save
+Not Found: //themes/.env.bak
+Not Found: //themes/.env.old
+Not Found: //vendor/.env
+Not Found: //vendor/.env.save
+Not Found: //vendor/.env.bak
+Not Found: //vendor/.env.old
+Not Found: //storage/.env
+Not Found: //storage/.env.save
+Not Found: //storage/.env.bak
+Not Found: //storage/.env.old
+Not Found: /
+Not Found: /.env
+Not Found: /.env.local
+Not Found: /.env.dev
+Not Found: /.env.prod
+Not Found: /.env.staging
+Not Found: /.env.development
+Not Found: /.env.production
+Not Found: /.env.test
+Not Found: /.env.backup
+Not Found: /.env.example
+Not Found: /.env.sample
+Not Found: /.env.old
+Not Found: /.env.bak
+Not Found: /.env.save
+Not Found: /.env.orig
+Not Found: /.env.swp
+Not Found: /.env~
+Not Found: /.env.tmp
+Not Found: /.env.dist
+Not Found: /admin/.env
+Not Found: /admin/.env.save
+Not Found: /admin/.env.bak
+Not Found: /admin/.env.old
+Not Found: /api/.env
+Not Found: /api/.env.save
+Not Found: /api/.env.bak
+Not Found: /api/.env.old
+Not Found: /app/.env
+Not Found: /app/.env.save
+Not Found: /app/.env.bak
+Not Found: /app/.env.old
+Not Found: /config/.env
+Not Found: /config/.env.save
+Not Found: /config/.env.bak
+Not Found: /config/.env.old
+Not Found: /src/.env
+Not Found: /src/.env.save
+Not Found: /src/.env.bak
+Not Found: /src/.env.old
+Not Found: /public/.env
+Not Found: /public/.env.save
+Not Found: /public/.env.bak
+Not Found: /public/.env.old
+Not Found: /assets/.env
+Not Found: /assets/.env.save
+Not Found: /assets/.env.bak
+Not Found: /assets/.env.old
+Not Found: /includes/.env
+Not Found: /includes/.env.save
+Not Found: /includes/.env.bak
+Not Found: /includes/.env.old
+Not Found: /lib/.env
+Not Found: /lib/.env.save
+Not Found: /lib/.env.bak
+Not Found: /lib/.env.old
+Not Found: /application/.env
+Not Found: /application/.env.save
+Not Found: /application/.env.bak
+Not Found: /application/.env.old
+Not Found: /system/.env
+Not Found: /system/.env.save
+Not Found: /system/.env.bak
+Not Found: /system/.env.old
+Not Found: /core/.env
+Not Found: /core/.env.save
+Not Found: /core/.env.bak
+Not Found: /core/.env.old
+Not Found: /modules/.env
+Not Found: /modules/.env.save
+Not Found: /modules/.env.bak
+Not Found: /modules/.env.old
+Not Found: /plugins/.env
+Not Found: /plugins/.env.save
+Not Found: /plugins/.env.bak
+Not Found: /plugins/.env.old
+Not Found: /themes/.env
+Not Found: /themes/.env.save
+Not Found: /themes/.env.bak
+Not Found: /themes/.env.old
+Not Found: /vendor/.env
+Not Found: /vendor/.env.save
+Not Found: /vendor/.env.bak
+Not Found: /vendor/.env.old
+Not Found: /storage/.env
+Not Found: /storage/.env.save
+Not Found: /storage/.env.bak
+Not Found: /storage/.env.old
+Not Found: /phpinfo.php
+Not Found: /info.php
+Not Found: /php_info.php
+Not Found: /phpinfo
+Not Found: /test.php
+Not Found: /info1.php
+Not Found: /info2.php
+Not Found: /php.php
+Not Found: /pi.php
+Not Found: /i.php
+Not Found: /phpversion.php
+Not Found: /php_version.php
+Not Found: /serverinfo.php
+Not Found: /server.php
+Not Found: /debug.php
+Not Found: /diagnostic.php
+Not Found: /phptest.php
+Not Found: /check.php
+Not Found: /phpinfo.php.save
+Not Found: /info.php.save
+Not Found: /php_info.php.save
+Not Found: /test.php.save
+Not Found: /phpinfo.php.bak
+Not Found: /info.php.bak
+Not Found: /php_info.php.bak
+Not Found: /test.php.bak
+Not Found: /phpinfo.php.old
+Not Found: /info.php.old
+Not Found: /php_info.php.old
+Not Found: /test.php.old
+Not Found: /phpinfo.php.orig
+Not Found: /info.php.orig
+Not Found: /php_info.php.orig
+Not Found: /test.php.orig
+Not Found: /phpinfo.php.backup
+Not Found: /info.php.backup
+Not Found: /php_info.php.backup
+Not Found: /test.php.backup
+Not Found: /phpinfo.php~
+Not Found: /info.php~
+Not Found: /php_info.php~
+Not Found: /test.php~
+Not Found: /phpinfo.php.swp
+Not Found: /info.php.swp
+Not Found: /php_info.php.swp
+Not Found: /test.php.swp
+Not Found: /phpinfo.php.tmp
+Not Found: /info.php.tmp
+Not Found: /php_info.php.tmp
+Not Found: /test.php.tmp
+Not Found: /admin/phpinfo.php
+Not Found: /admin/info.php
+Not Found: /admin/phpinfo.php.save
+Not Found: /admin/info.php.save
+Not Found: /test/phpinfo.php
+Not Found: /test/info.php
+Not Found: /test/phpinfo.php.save
+Not Found: /test/info.php.save
+Not Found: /dev/phpinfo.php
+Not Found: /dev/info.php
+Not Found: /dev/phpinfo.php.save
+Not Found: /dev/info.php.save
+Not Found: /tmp/phpinfo.php
+Not Found: /tmp/info.php
+Not Found: /tmp/phpinfo.php.save
+Not Found: /tmp/info.php.save
+Not Found: /includes/phpinfo.php
+Not Found: /includes/info.php
+Not Found: /includes/phpinfo.php.save
+Not Found: /includes/info.php.save
+Not Found: /scripts/phpinfo.php
+Not Found: /scripts/info.php
+Not Found: /scripts/phpinfo.php.save
+Not Found: /scripts/info.php.save
+Not Found: /cgi-bin/phpinfo.php
+Not Found: /cgi-bin/info.php
+Not Found: /cgi-bin/phpinfo.php.save
+Not Found: /cgi-bin/info.php.save
+Not Found: /public/phpinfo.php
+Not Found: /public/info.php
+Not Found: /public/phpinfo.php.save
+Not Found: /public/info.php.save
+Not Found: /web/phpinfo.php
+Not Found: /web/info.php
+Not Found: /web/phpinfo.php.save
+Not Found: /web/info.php.save
+Not Found: /www/phpinfo.php
+Not Found: /www/info.php
+Not Found: /www/phpinfo.php.save
+Not Found: /www/info.php.save
+Not Found: /site/phpinfo.php
+Not Found: /site/info.php
+Not Found: /site/phpinfo.php.save
+Not Found: /site/info.php.save
+Not Found: /.git/config
+Not Found: /
+Not Found: /.git/config
+Not Found: /.env
+Not Found: /api/.env
+Not Found: /config/.env
+Not Found: /_profiler/phpinfo
+Not Found: /tool/view/phpinfo.view.php
+Not Found: /phpinfo.php
+Not Found: /phpinfo
+Not Found: /info.php
+Not Found: /.git/config
+Not Found: /
+Not Found: /.git/HEAD
+Not Found: /
+Not Found: /Core/Skin/Login.aspx
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /
+Not Found: /wiki
+Not Found: /Core/Skin/Login.aspx
+Not Found: /.git/config
+Not Found: /
+Not Found: /
+Not Found: /admin/
+Not Found: /admin/
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /https://" + window.location.host + "/" + "relogin.asp
+Not Found: /https:\u002f\u002f78.100.113.141\u002fPages\u002fPageNotFoundError.aspx
+Not Found: /logout
+Not Found: /Core/Skin/Login.aspx
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /robots.txt
+Not Found: /
+Not Found: /latest/meta-data/
+Not Found: /
+Not Found: /wiki
+Not Found: /.git/config
+Not Found: /
+Not Found: /Core/Skin/Login.aspx
+Not Found: /
+Not Found: /cgi-bin/luci/;stok=/locale
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /robots.txt
+Not Found: /sitemap.xml
+Not Found: /
+Not Found: /Core/Skin/Login.aspx
+Not Found: /
+Not Found: /
+Not Found: /webui/
+Not Found: /favicon.ico
+Not Found: /
+Not Found: /.git/config
+Not Found: /
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /Core/Skin/Login.aspx
+Not Found: /
+Not Found: /.git/config
+Not Found: /.env
+Not Found: /.env.backup
+Not Found: /.env.bak
+Not Found: /.env.old
+Not Found: /.env.dev
+Not Found: /.env.production
+Not Found: /.env.local
+Not Found: /api/.env
+Not Found: /config/.env
+Not Found: /backend/.env
+Not Found: /app/.env
+Not Found: /laravel/.env
+Not Found: /phpinfo.php
+Not Found: /info.php
+Not Found: /phpinfo
+Not Found: /info
+Not Found: /test/phpinfo.php
+Not Found: /dev/phpinfo.php
+Not Found: /admin/phpinfo.php
+Not Found: /p.php
+Not Found: /tools/phpinfo.php
+Not Found: /tmp/phpinfo.php
+Not Found: /_profiler/phpinfo
+Not Found: /ReportServer
+Not Found: /
+Not Found: /dns-query
+Not Found: /.git/config
+Not Found: /robots.txt
+Not Found: /
+Not Found: /dns-query
+Not Found: /hello.world
+Not Found: /
+Not Found: /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /vendor/phpunit/phpunit/Util/PHP/eval-stdin.php
+Not Found: /vendor/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /vendor/phpunit/Util/PHP/eval-stdin.php
+Not Found: /vendor/phpunit/phpunit/LICENSE/eval-stdin.php
+Not Found: /vendor/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /phpunit/phpunit/Util/PHP/eval-stdin.php
+Not Found: /phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /phpunit/Util/PHP/eval-stdin.php
+Not Found: /lib/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /lib/phpunit/phpunit/Util/PHP/eval-stdin.php
+Not Found: /lib/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /lib/phpunit/Util/PHP/eval-stdin.php
+Not Found: /lib/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /laravel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /www/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /ws/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /yii/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /zend/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /ws/ec/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /V2/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /tests/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /test/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /testing/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /demo/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /cms/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /crm/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /admin/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /backup/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /blog/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /workspace/drupal/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /panel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /public/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /apps/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /app/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+Not Found: /index.php
+Not Found: /public/index.php
+Not Found: /index.php
+Not Found: /index.php
+Not Found: /containers/json
+Not Found: /Core/Skin/Login.aspx
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: /
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2020/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: /Core/Skin/Login.aspx
+Not Found: /
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /
+Not Found: /
+Not Found: /Core/Skin/Login.aspx
+Not Found: /
+Not Found: //wp-includes/wlwmanifest.xml
+Not Found: //xmlrpc.php
+Not Found: /
+Not Found: //blog/wp-includes/wlwmanifest.xml
+Not Found: //web/wp-includes/wlwmanifest.xml
+Not Found: //wordpress/wp-includes/wlwmanifest.xml
+Not Found: //website/wp-includes/wlwmanifest.xml
+Not Found: //wp/wp-includes/wlwmanifest.xml
+Not Found: //news/wp-includes/wlwmanifest.xml
+Not Found: //2018/wp-includes/wlwmanifest.xml
+Not Found: //2019/wp-includes/wlwmanifest.xml
+Not Found: //shop/wp-includes/wlwmanifest.xml
+Not Found: //wp1/wp-includes/wlwmanifest.xml
+Not Found: //test/wp-includes/wlwmanifest.xml
+Not Found: //wp2/wp-includes/wlwmanifest.xml
+Not Found: //site/wp-includes/wlwmanifest.xml
+Not Found: //cms/wp-includes/wlwmanifest.xml
+Not Found: //sito/wp-includes/wlwmanifest.xml
+Not Found: /
+Not Found: /.git/HEAD
+Not Found: /favicon.ico
+Not Found: /Core/Skin/Login.aspx
+Not Found: /.git/index
+Not Found: /.git/index
+Not Found: /.git/info/exclude
+Not Found: /.git/packed-refs
+Not Found: /.git/FETCH_HEAD
+Not Found: /.git/refs/heads/master
+Not Found: /.git/refs/heads/main
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /robots.txt
+Not Found: /sitemap.xml
+Not Found: /
+Not Found: /Core/Skin/Login.aspx
+Not Found: /
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /.git/config
+Not Found: /dbadmin/index.php
+Not Found: /phpMyAdmin_/index.php
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /.git/config
+Not Found: /Core/Skin/Login.aspx
+Not Found: /
+Not Found: /owa/auth/logon.aspx
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /Core/Skin/Login.aspx
+Not Found: /
+Not Found: /
+Not Found: /cgi-bin/luci/;stok=/locale
+Not Found: /developmentserver/metadatauploader
+Not Found: /Core/Skin/Login.aspx
+Not Found: /
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /robots.txt
+Not Found: /.well-known/nodeinfo
+Not Found: /.well-known/assetlinks.json
+Not Found: /sitemap_index.xml
+Not Found: /.well-known/openid-configuration
+Not Found: /crossdomain.xml
+Not Found: /.well-known/host-meta.json
+Not Found: /.well-known/apple-app-site-association
+Not Found: /sitemap.xml
+Not Found: /app-ads.txt
+Not Found: /clientaccesspolicy.xml
+Not Found: /ads.txt
+Not Found: /.well-known/webfinger
+Not Found: /.well-known/host-meta
+Not Found: /.well-known/security.txt
+Not Found: /security.txt
+Not Found: /
+Not Found: /robots.txt
+Not Found: /.well-known/assetlinks.json
+Not Found: /sitemap.xml
+Not Found: /ads.txt
+Not Found: /app-ads.txt
+Not Found: /clientaccesspolicy.xml
+Not Found: /sitemap_index.xml
+Not Found: /.well-known/webfinger
+Not Found: /crossdomain.xml
+Not Found: /.well-known/nodeinfo
+Not Found: /.well-known/host-meta.json
+Not Found: /.well-known/host-meta
+Not Found: /.well-known/openid-configuration
+Not Found: /.well-known/apple-app-site-association
+Not Found: /.well-known/security.txt
+Not Found: /security.txt
+Not Found: /.github/workflows/release.yml
+Not Found: /.git/config
+Not Found: /.git/HEAD
+Not Found: /.git/logs/HEAD
+Not Found: /.env
+Not Found: /.env.local
+Not Found: /.env.production
+Not Found: /.env.swp
+Not Found: /.aws/credentials
+Not Found: /.github/workflows/main.yaml
+Not Found: /.github/workflows/deploy.yml
+Not Found: /.github/workflows/ci.yml
+Not Found: /config/
+Not Found: /config/dev.js
+Not Found: /config/default.js
+Not Found: /config/production.js
+Not Found: /config/secrets.js
+Not Found: /config/config.json
+Not Found: /config/keys.json
+Not Found: /config/firebase.js
+Not Found: /config/firebase.json
+Not Found: /config/credentials.json
+Not Found: /config/private.key
+Not Found: /config/master.key
+Not Found: /config/.env
+Not Found: /config/settings.py
+Not Found: /config/database.yml
+Not Found: /config/secrets.yml
+Not Found: /thumbnail.txt
+Not Found: /thumbnail.txt
+Not Found: /
+Not Found: /
+Not Found: /Auth1.html
+Not Found: /Auth1.html
+Not Found: /Auth1.html
+Not Found: /Auth1.html
+Not Found: /Core/Skin/Login.aspx
+Not Found: /
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /aaa9
+Not Found: /aab8
+Not Found: /
+Not Found: /
+Not Found: /login
+Not Found: /webui/
+Not Found: /favicon.ico
+Not Found: /
+Not Found: /autodiscover/autodiscover.json
+Not Found: /geoserver/web/
+Not Found: /Core/Skin/Login.aspx
+Not Found: /.git/config
+Not Found: /+CSCOL+/Java.jar
+Not Found: /+CSCOE+/logon_forms.js
+Not Found: /+CSCOL+/a1.jar
+Not Found: /+CSCOE+/transfer.js
+Not Found: /cgi-bin/luci/;stok=/locale
+Not Found: /
+Not Found: /ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application
+Not Found: /.env
+Not Found: /
+Not Found: /
+Not Found: /robots.txt
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /_phpmyadmin/index.php
+Not Found: /phpMyAdmin-4/index.php
+Not Found: /admin/sysadmin/index.php
+Not Found: /phpmyadmin3/index.php
+Not Found: /phpMyAdmin-latest-all-languages/index.php
+Not Found: /phpMyAdmin-4.9.10-all-languages/index.php
+Not Found: /phpMyAdmin5/index.php
+Not Found: /db/phpMyAdmin-4/index.php
+Not Found: /phpmyadmin1/index.php
+Not Found: /phpMyAdmin4/index.php
+Not Found: /
+Not Found: /Core/Skin/Login.aspx
+Not Found: /.gitignore
+Not Found: /
+Not Found: /epa/scripts/win/nsepa_setup.exe
+Not Found: /Core/Skin/Login.aspx
+Not Found: /stalker_portal/server/tools/auth_simple.php
+Internal Server Error: /admin_panel/media/upload/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 190, in post
+    return self.create(request, *args, **kwargs)
+  File "/app/admin_panel/views.py", line 142, in create
+    self.perform_create(serializer)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 205, in save
+    self.instance = self.create(validated_data)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 939, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 790, in save_base
+    updated = self._save_table(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 933, in _do_insert
+    return manager._insert(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1396, in execute_sql
+    for sql, params in self.as_sql():
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1339, in as_sql
+    value_rows = [
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1340, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1340, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1291, in pre_save_val
+    return field.pre_save(obj, add=True)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/fields/files.py", line 308, in pre_save
+    file.save(file.name, file.file, save=False)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/fields/files.py", line 88, in save
+    self.name = self.storage.save(name, content, max_length=self.field.max_length)
+  File "/usr/local/lib/python3.9/site-packages/django/core/files/storage.py", line 54, in save
+    return self._save(name, content)
+  File "/usr/local/lib/python3.9/site-packages/storages/backends/s3boto3.py", line 459, in _save
+    obj.upload_fileobj(content, ExtraArgs=params)
+  File "/usr/local/lib/python3.9/site-packages/boto3/s3/inject.py", line 619, in object_upload_fileobj
+    return self.meta.client.upload_fileobj(
+  File "/usr/local/lib/python3.9/site-packages/boto3/s3/inject.py", line 539, in upload_fileobj
+    return future.result()
+  File "/usr/local/lib/python3.9/site-packages/s3transfer/futures.py", line 73, in result
+    return self._coordinator.result()
+  File "/usr/local/lib/python3.9/site-packages/s3transfer/futures.py", line 233, in result
+    raise self._exception
+  File "/usr/local/lib/python3.9/site-packages/s3transfer/tasks.py", line 126, in __call__
+    return self._execute_main(kwargs)
+  File "/usr/local/lib/python3.9/site-packages/s3transfer/tasks.py", line 150, in _execute_main
+    return_value = self._main(**kwargs)
+  File "/usr/local/lib/python3.9/site-packages/s3transfer/upload.py", line 692, in _main
+    client.put_object(Bucket=bucket, Key=key, Body=body, **extra_args)
+  File "/usr/local/lib/python3.9/site-packages/botocore/client.py", line 314, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/usr/local/lib/python3.9/site-packages/botocore/client.py", line 598, in _make_api_call
+    http, parsed_response = self._endpoint.make_request(
+  File "/usr/local/lib/python3.9/site-packages/botocore/endpoint.py", line 148, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/usr/local/lib/python3.9/site-packages/botocore/endpoint.py", line 174, in _send_request
+    success_response, exception = self._get_response(
+  File "/usr/local/lib/python3.9/site-packages/botocore/endpoint.py", line 255, in _get_response
+    parsed_response = parser.parse(
+  File "/usr/local/lib/python3.9/site-packages/botocore/parsers.py", line 240, in parse
+    parsed = self._do_error_parse(response, shape)
+  File "/usr/local/lib/python3.9/site-packages/botocore/parsers.py", line 874, in _do_error_parse
+    return self._parse_error_from_body(response)
+  File "/usr/local/lib/python3.9/site-packages/botocore/parsers.py", line 898, in _parse_error_from_body
+    self._replace_nodes(parsed)
+  File "/usr/local/lib/python3.9/site-packages/botocore/parsers.py", line 430, in _replace_nodes
+    if value.getchildren():
+AttributeError: 'xml.etree.ElementTree.Element' object has no attribute 'getchildren'
+Not Found: /favicon.ico
+Invalid HTTP_HOST header: '13.126.60.170'. You may need to add '13.126.60.170' to ALLOWED_HOSTS.
+Bad Request: /
+Internal Server Error: /admin_panel/media/upload/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 190, in post
+    return self.create(request, *args, **kwargs)
+  File "/app/admin_panel/views.py", line 142, in create
+    self.perform_create(serializer)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 205, in save
+    self.instance = self.create(validated_data)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 939, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 790, in save_base
+    updated = self._save_table(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 933, in _do_insert
+    return manager._insert(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1396, in execute_sql
+    for sql, params in self.as_sql():
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1339, in as_sql
+    value_rows = [
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1340, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1340, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1291, in pre_save_val
+    return field.pre_save(obj, add=True)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/fields/files.py", line 308, in pre_save
+    file.save(file.name, file.file, save=False)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/fields/files.py", line 88, in save
+    self.name = self.storage.save(name, content, max_length=self.field.max_length)
+  File "/usr/local/lib/python3.9/site-packages/django/core/files/storage.py", line 54, in save
+    return self._save(name, content)
+  File "/usr/local/lib/python3.9/site-packages/storages/backends/s3boto3.py", line 459, in _save
+    obj.upload_fileobj(content, ExtraArgs=params)
+  File "/usr/local/lib/python3.9/site-packages/boto3/s3/inject.py", line 619, in object_upload_fileobj
+    return self.meta.client.upload_fileobj(
+  File "/usr/local/lib/python3.9/site-packages/boto3/s3/inject.py", line 539, in upload_fileobj
+    return future.result()
+  File "/usr/local/lib/python3.9/site-packages/s3transfer/futures.py", line 73, in result
+    return self._coordinator.result()
+  File "/usr/local/lib/python3.9/site-packages/s3transfer/futures.py", line 233, in result
+    raise self._exception
+  File "/usr/local/lib/python3.9/site-packages/s3transfer/tasks.py", line 126, in __call__
+    return self._execute_main(kwargs)
+  File "/usr/local/lib/python3.9/site-packages/s3transfer/tasks.py", line 150, in _execute_main
+    return_value = self._main(**kwargs)
+  File "/usr/local/lib/python3.9/site-packages/s3transfer/upload.py", line 692, in _main
+    client.put_object(Bucket=bucket, Key=key, Body=body, **extra_args)
+  File "/usr/local/lib/python3.9/site-packages/botocore/client.py", line 314, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/usr/local/lib/python3.9/site-packages/botocore/client.py", line 598, in _make_api_call
+    http, parsed_response = self._endpoint.make_request(
+  File "/usr/local/lib/python3.9/site-packages/botocore/endpoint.py", line 148, in make_request
+    return self._send_request(request_dict, operation_model)
+  File "/usr/local/lib/python3.9/site-packages/botocore/endpoint.py", line 174, in _send_request
+    success_response, exception = self._get_response(
+  File "/usr/local/lib/python3.9/site-packages/botocore/endpoint.py", line 255, in _get_response
+    parsed_response = parser.parse(
+  File "/usr/local/lib/python3.9/site-packages/botocore/parsers.py", line 240, in parse
+    parsed = self._do_error_parse(response, shape)
+  File "/usr/local/lib/python3.9/site-packages/botocore/parsers.py", line 874, in _do_error_parse
+    return self._parse_error_from_body(response)
+  File "/usr/local/lib/python3.9/site-packages/botocore/parsers.py", line 898, in _parse_error_from_body
+    self._replace_nodes(parsed)
+  File "/usr/local/lib/python3.9/site-packages/botocore/parsers.py", line 430, in _replace_nodes
+    if value.getchildren():
+AttributeError: 'xml.etree.ElementTree.Element' object has no attribute 'getchildren'
+Internal Server Error: /admin_panel/media/upload/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 190, in post
+    return self.create(request, *args, **kwargs)
+  File "/app/admin_panel/views.py", line 142, in create
+    self.perform_create(serializer)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/mixins.py", line 24, in perform_create
+    serializer.save()
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 205, in save
+    self.instance = self.create(validated_data)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/serializers.py", line 939, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 447, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 753, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 790, in save_base
+    updated = self._save_table(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 895, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 933, in _do_insert
+    return manager._insert(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 1254, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1396, in execute_sql
+    for sql, params in self.as_sql():
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1339, in as_sql
+    value_rows = [
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1340, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1340, in <listcomp>
+    [self.prepare_value(field, self.pre_save_val(field, obj)) for field in fields]
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1291, in pre_save_val
+    return field.pre_save(obj, add=True)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/fields/files.py", line 308, in pre_save
+    file.save(file.name, file.file, save=False)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/fields/files.py", line 88, in save
+    self.name = self.storage.save(name, content, max_length=self.field.max_length)
+  File "/usr/local/lib/python3.9/site-packages/django/core/files/storage.py", line 54, in save
+    return self._save(name, content)
+  File "/usr/local/lib/python3.9/site-packages/storages/backends/s3boto3.py", line 459, in _save
+    obj.upload_fileobj(content, ExtraArgs=params)
+  File "/usr/local/lib/python3.9/site-packages/boto3/s3/inject.py", line 620, in object_upload_fileobj
+    return self.meta.client.upload_fileobj(
+  File "/usr/local/lib/python3.9/site-packages/boto3/s3/inject.py", line 540, in upload_fileobj
+    return future.result()
+  File "/usr/local/lib/python3.9/site-packages/s3transfer/futures.py", line 103, in result
+    return self._coordinator.result()
+  File "/usr/local/lib/python3.9/site-packages/s3transfer/futures.py", line 266, in result
+    raise self._exception
+  File "/usr/local/lib/python3.9/site-packages/s3transfer/tasks.py", line 139, in __call__
+    return self._execute_main(kwargs)
+  File "/usr/local/lib/python3.9/site-packages/s3transfer/tasks.py", line 162, in _execute_main
+    return_value = self._main(**kwargs)
+  File "/usr/local/lib/python3.9/site-packages/s3transfer/upload.py", line 758, in _main
+    client.put_object(Bucket=bucket, Key=key, Body=body, **extra_args)
+  File "/usr/local/lib/python3.9/site-packages/botocore/client.py", line 391, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/usr/local/lib/python3.9/site-packages/botocore/client.py", line 719, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (AccessControlListNotSupported) when calling the PutObject operation: The bucket does not allow ACLs
+Invalid HTTP_HOST header: '13.126.60.170'. You may need to add '13.126.60.170' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: '13.126.60.170'. You may need to add '13.126.60.170' to ALLOWED_HOSTS.
+Bad Request: /actuator/health
+Invalid HTTP_HOST header: '0.0.0.0'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+Bad Request: /admin/config.php
+Internal Server Error: /admin_panel/media/delete/1/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/generics.py", line 217, in delete
+    return self.destroy(request, *args, **kwargs)
+  File "/app/admin_panel/views.py", line 160, in destroy
+    self.perform_destroy(instance)
+  File "/usr/local/lib/python3.9/site-packages/rest_framework/mixins.py", line 95, in perform_destroy
+    instance.delete()
+  File "/app/admin_panel/models.py", line 75, in delete
+    if self.file and os.path.isfile(self.file.path):
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/fields/files.py", line 58, in path
+    return self.storage.path(self.name)
+  File "/usr/local/lib/python3.9/site-packages/django/core/files/storage.py", line 123, in path
+    raise NotImplementedError("This backend doesn't support absolute paths.")
+NotImplementedError: This backend doesn't support absolute paths.
+Invalid HTTP_HOST header: '13.126.60.170'. You may need to add '13.126.60.170' to ALLOWED_HOSTS.
+Bad Request: /
+Invalid HTTP_HOST header: '13.126.60.170'. You may need to add '13.126.60.170' to ALLOWED_HOSTS.
+Bad Request: /Core/Skin/Login.aspx
+Invalid HTTP_HOST header: '13.126.60.170'. You may need to add '13.126.60.170' to ALLOWED_HOSTS.
+Bad Request: /
+Unauthorized: /student/courses/
+Unauthorized: /student/courses/recently-accessed/
+Unauthorized: /student/profile/
+Unauthorized: /student/profile/
+Unauthorized: /student/profile/
+Unauthorized: /student/courses/
+Unauthorized: /student/courses/recently-accessed/
+Unauthorized: /student/profile/
+Unauthorized: /student/profile/
+Unauthorized: /student/profile/
+Unauthorized: /student/courses/
+Unauthorized: /student/courses/recently-accessed/
+Unauthorized: /student/profile/
+Unauthorized: /student/profile/
+Unauthorized: /student/courses/
+Unauthorized: /student/profile/
+Unauthorized: /student/courses/recently-accessed/
+Unauthorized: /student/profile/
+Unauthorized: /student/profile/
+Unauthorized: /student/profile/
+Unauthorized: /student/courses/
+Unauthorized: /student/courses/recently-accessed/
+Unauthorized: /student/profile/
+Unauthorized: /student/courses/purchased/
+Unauthorized: /student/profile/
+Unauthorized: /student/courses/
+Unauthorized: /student/profile/
+Unauthorized: /student/profile/
+Unauthorized: /student/courses/progress/
+Unauthorized: /student/profile/
+Unauthorized: /student/courses/
+Unauthorized: /student/profile/
+Unauthorized: /student/courses/recently-accessed/
+Unauthorized: /student/profile/
+Unauthorized: /student/profile/
+Unauthorized: /student/courses/
+Unauthorized: /student/courses/recently-accessed/
+Unauthorized: /student/profile/
+Unauthorized: /student/profile/
+Unauthorized: /student/courses/
+Unauthorized: /student/courses/recently-accessed/
+Unauthorized: /student/profile/
+Unauthorized: /student/profile/

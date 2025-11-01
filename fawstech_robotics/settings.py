@@ -21,7 +21,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # --- Security ---
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 DEBUG = False
-ALLOWED_HOSTS = ['*']  # Restrict in production
+#ALLOWED_HOSTS = ['*']  # Restrict in production
+ALLOWED_HOSTS = ['api.fawstechrobotics.in',
+    'www.fawstechrobotics.in',
+    'admin.fawstechrobotics.in']
+
 
 # --- Application Definition ---
 INSTALLED_APPS = [
@@ -68,14 +72,34 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'fawstech_robotics.wsgi.application'
 
-# --- Database ---
-# --- Database ---
+import urllib.parse
+import os 
+
+# settings.py
+import urllib.parse
+import os 
+
+# 1. Get your raw database details
+DB_USER = os.environ.get('DB_USER')
+DB_PASS = os.environ.get('DB_PASS')
+DB_HOST = os.environ.get('DB_HOST')
+DB_NAME = os.environ.get('DB_NAME') # This is "fawstech_robotics_db"
+
+# 2. Create escaped versions for the URI
+DB_USER_ESCAPED = urllib.parse.quote_plus(DB_USER)
+DB_PASS_ESCAPED = urllib.parse.quote_plus(DB_PASS)
+
+# 3. Build the URI string (THE UPDATED LINE)
+#    We are adding the authSource query parameter at the end.
+MONGO_URI = f"mongodb://{DB_USER_ESCAPED}:{DB_PASS_ESCAPED}@{DB_HOST}:27017/{DB_NAME}?authSource={DB_NAME}"
+
+# 4. Your DATABASES setting remains the same
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'fawstech_db',
+        'NAME': DB_NAME,
         'CLIENT': {
-            'host': os.getenv("MONGO_URI"),
+            'host': MONGO_URI,
         }
     }
 }
@@ -141,7 +165,12 @@ RAZORPAY_KEY_ID = os.getenv("RAZORPAY_KEY_ID")
 RAZORPAY_SECRET = os.getenv("RAZORPAY_KEY_SECRET")
 
 # --- CORS ---
-CORS_ALLOW_ALL_ORIGINS = True  # Set to True only if needed
+#CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOWED_ORIGINS = [
+    "https://www.fawstechrobotics.in",
+    "https://admin.fawstechrobotics.in",
+    "http://localhost:3000"  # Good for local development
+]  # Set to True only if needed
 
 # --- Security Settings ---
 SECURE_BROWSER_XSS_FILTER = True
@@ -183,3 +212,39 @@ LOGGING = {
 # Allow large file uploads (1 GB)
 DATA_UPLOAD_MAX_MEMORY_SIZE = 1073741824  # 1 GB
 FILE_UPLOAD_MAX_MEMORY_SIZE = 1073741824  # 1 GB
+
+
+# --- AWS S3 MEDIA STORAGE ---
+# (This will be used for all new file uploads)
+
+# 1. Get credentials from .env file
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_REGION_NAME = os.environ.get('AWS_S3_REGION_NAME')
+
+if AWS_STORAGE_BUCKET_NAME:  # Only activate S3 if the env var is set
+    
+    # 2. This is the S3 endpoint URL
+    AWS_S3_ENDPOINT_URL = f'https://s3.{AWS_S3_REGION_NAME}.amazonaws.com'
+    
+    # 3. This is the public URL for your files
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com'
+
+    # 4. All media files will be stored under a 'media/' prefix in your bucket
+    # e.g., s3://fawstech-robotics-media/media/chapter_videos/video.mp4
+    AWS_LOCATION = 'media'
+
+    # 5. Tell Django to use S3 for file storage
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    
+    # 6. This is the URL path that gets prefixed to your filenames
+    # This overrides the old MEDIA_URL = '/media/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
+    
+    # --- Standard S3 Settings ---
+    #AWS_DEFAULT_ACL = 'public-read'
+    AWS_QUERYSTRING_AUTH = False  # Files are public, so no auth strings
+    AWS_S3_OBJECT_PARAMETERS = {
+        'CacheControl': 'max-age=86400', # Cache files for 1 day
+    }

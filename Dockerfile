@@ -17,6 +17,7 @@ COPY . .
 
 # Expose port for Gunicorn
 EXPOSE 8000
-
+# Collect static files
+RUN python3.9 manage.py collectstatic --noinput
 # Run migrations and start Gunicorn
 CMD ["sh", "-c", "python3.9 manage.py makemigrations && python3.9 manage.py migrate && gunicorn fawstech_robotics.wsgi:application --bind 0.0.0.0:8000 --workers 3 --timeout 3600"]

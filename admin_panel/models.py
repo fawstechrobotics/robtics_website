@@ -54,8 +54,8 @@ class Author(models.Model):
         return self.name
 
     def delete(self, *args, **kwargs):
-        if self.profile_picture and os.path.isfile(self.profile_picture.path):
-            os.remove(self.profile_picture.path)
+        # if self.profile_picture and os.path.isfile(self.profile_picture.path):
+        #     os.remove(self.profile_picture.path)
         super().delete(*args, **kwargs)
 
 class LandingMedia(models.Model):
@@ -72,8 +72,8 @@ class LandingMedia(models.Model):
         return f"{self.media_type} - {self.file.name}"
     
     def delete(self, *args, **kwargs):
-        if self.file and os.path.isfile(self.file.path):
-            os.remove(self.file.path)
+        # if self.file and os.path.isfile(self.file.path):
+        #     os.remove(self.file.path)
         super().delete(*args, **kwargs)
 
 class GalleryImage(models.Model):
@@ -183,8 +183,8 @@ class Chapter(models.Model):
         self.module.update_total_chapters()
 
     def delete(self, *args, **kwargs):
-        if self.video and os.path.isfile(self.video.path):
-            os.remove(self.video.path)
+        # if self.video and os.path.isfile(self.video.path):
+        #     os.remove(self.video.path)
         module = self.module
         super().delete(*args, **kwargs)
         module.update_total_chapters()
@@ -223,8 +223,8 @@ class Event(models.Model):
         return self.title
 
     def delete(self, *args, **kwargs):
-        if self.image and os.path.isfile(self.image.path):
-            os.remove(self.image.path)
+        # if self.image and os.path.isfile(self.image.path):
+        #     os.remove(self.image.path)
         super().delete(*args, **kwargs)
 
 class MockTest(models.Model):
